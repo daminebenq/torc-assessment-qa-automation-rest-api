@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+require('@shelex/cypress-allure-plugin');
 
 Cypress.Commands.add('randomNumber', () => {
 	return Math.round(Math.random() * 10)

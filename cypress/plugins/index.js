@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+/// <reference types="@shelex/cypress-allure-plugin" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -15,7 +16,20 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+const browserify = require('@cypress/browserify-preprocessor')
+
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  on('before:browser:launch', (_, launchOptions) => {
+      launchOptions.args.push('--window-size=1920,1080');
+      launchOptions.args.push('--lang=en-US');
+      return launchOptions;
+  });
+
+  const options = browserify.defaultOptions;
+  options.typescript = require.resolve('typescript');
+  on('file:preprocessor', browserify
+    .defaultOptions(options));
+  allureWriter(on, config);
+  return config
 }

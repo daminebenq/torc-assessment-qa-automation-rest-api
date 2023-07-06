@@ -1,6 +1,7 @@
 {
 }
 const { defineConfig } = require('cypress')
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
 	video: false,
@@ -9,9 +10,10 @@ module.exports = defineConfig({
 		supportFile: false,
 		// We've imported your old cypress plugins here.
 		// You may want to clean this up later by importing these.
-		setupNodeEvents(on, config) {
-		  return require('./cypress/plugins/index.js')(on, config);
-		},
+        setupNodeEvents(on, config) {
+            allureWriter(on, config);
+            return config;
+        },
 		baseUrl: "https://api.football-data.org/v4/persons",
 		slowTestThreshold: 1000,
 		specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',

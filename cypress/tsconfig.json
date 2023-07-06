@@ -1,9 +1,16 @@
 {
 	"compilerOptions": {
-		"allowJs": true,
-		"baseUrl": "../node_modules",
-		"types": ["cypress"],
-		"noEmit": true,
+	  "allowJs": true,
+	  "target": "es5",
+	  "lib": ["es5", "dom", "es2018"],
+	  "types": ["cypress", "node", "@shelex/cypress-allure-plugin"],
+	  "strict": true,
+	  "resolveJsonModule": true,
+	  "noEmit": true
 	},
 	"include": ["**/*.*", "cypress/support/*.{js,jsx,ts,tsx}"],
-}
+	"exclude": [
+	  "node_modules/"
+	],
+	"specPattern": "./cypress/e2e/*.spec.js",
+  }
