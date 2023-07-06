@@ -1,0 +1,24 @@
+{
+	"name": "torc-assessment-qa-automation-rest-api",
+	"version": "1.0.0",
+	"description": "torc-assessment-qa-automation-rest-api",
+	"main": "index.js",
+	"scripts": {
+		"cy:open": "cypress open",
+		"cy:run": "cypress run  --record --key e0840e38-1ff0-472e-908d-5dea697def9a",
+		"cy:run-dashboard": "cypress run --record --key e0840e38-1ff0-472e-908d-5dea697def9a"
+	},
+	"keywords": [
+		"CYPRESS",
+		"REST",
+		"API",
+		"TESTS"
+	],
+	"license": "ISC",
+	"dependencies": {
+		"prettier": "^2.0.5"
+	},
+	"devDependencies": {
+		"cypress": "^12.6.0"
+	}
+}

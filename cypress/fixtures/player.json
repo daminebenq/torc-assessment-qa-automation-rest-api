@@ -1,0 +1,7 @@
+{
+	"endpoint": "https://api.football-data.org/v4/persons",
+	"validAuth": { "X-Auth-Token": "7e79c5ca42b54ec88a44eab35066ec14" },
+	"badAuth": { "X-Auth-Token": "abcdefghijklmnopqrstuvwxyz" },
+	"name": "Christiano Ronaldo",
+	"position": "Centre-Forward"
+}
